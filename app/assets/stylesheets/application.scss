@@ -15,3 +15,15 @@
  */
     @import "bootstrap-sprockets";
     @import "bootstrap";
+
+*{
+	display: block;
+	position: static;
+}
+.toppage{
+	margin-top: 40px;
+}
+.title{
+	color: white;
+	font-size: 20px;
+}
