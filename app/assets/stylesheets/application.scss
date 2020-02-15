@@ -18,12 +18,17 @@
 
 *{
 	display: block;
-	position: static;
-}
-.toppage{
-	margin-top: 40px;
 }
 .title{
 	color: white;
 	font-size: 20px;
+}
+
+.nemu{
+	font-size: 13px;
+	text-align: justify;
+	line-height: 18px
+}
+.contents{
+	margin-top: 51px;
 }

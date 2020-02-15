@@ -1,5 +1,6 @@
 <%= render 'home/header' %>
 
+<div class="container contents">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -35,4 +36,5 @@
 
 <%= render "devise/shared/links" %>
 
+</div>
 <%= render 'home/footer' %>
