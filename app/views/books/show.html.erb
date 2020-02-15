@@ -2,30 +2,7 @@
 <div class="container contents">
 	<div class="row">
 		<div class="col-xs-3">
-			<h2>User info</h2>
-			<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "profile-thumb", fallback: "no_image.jpg"%>
-			<table class="table">
-				<tr>
-					<th class="user-th">name</th>
-					<th><%= @user.name %></th>
-				</tr>
-				<tr>
-					<th class="user-th">introduction</th>
-					<th><%= @user.introduction %></th>
-				</tr>
-			</table>
-			<div class="row">
-				<%= link_to edit_user_path(current_user) do %><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button><% end %>
-			</div>
-			<h2>New book</h2>
-			<%= form_for(@book) do |f| %>
-			<h5>Title</h5>
-			<%= f.text_field :title %>
-			<h5>Opinion</h5>
-			<%= f.text_area :body %>
-			<div class="submit"><%= f.submit 'Create Book' %></div>
-
-			<% end %>
+			<%=  render'users/sidebar', user: @user , book:@book %>
 		</div>
 		<div class="col-xs-9">
 			<h2>Book detail</h2>
