@@ -16,9 +16,7 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
-*{
-	display: block;
-}
+
 .title{
 	color: white;
 	font-size: 20px;
@@ -31,4 +29,21 @@
 }
 .contents{
 	margin-top: 51px;
+}
+
+.user-th{
+	width: 100px;
+}
+.th-image{
+	width: 10%;
+}
+.th-title{
+	width: 30%;
+}
+.th-body{
+	width: auto;
+}
+
+.td{
+	width: auto;
 }

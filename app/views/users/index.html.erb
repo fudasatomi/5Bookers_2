@@ -1,6 +1,50 @@
 <%= render 'home/header' %>
+<div class="container contents">
+	<div class="row">
+		<div class="col-xs-3">
+			<h2>User info</h2>
+			<%= image_tag('no_image.jpg', :size =>'100x100', class: "profile-thumb") %>
+			<table class="table">
+				<tr>
+					<th class="user-th">name</th>
+					<th><%= @user.name %></th>
+				</tr>
+				<tr>
+					<th class="user-th">introduction</th>
+					<th><%= @user.introduction %></th>
+				</tr>
+			</table>
+			<div class="row">
+				<%= link_to edit_user_path(current_user) do %><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button><% end %>
+			</div>
+			<h2>New book</h2>
+			<%= form_for(@book) do |f| %>
+			<h5>Title</h5>
+			<%= f.text_field :title %>
+			<h5>Opinion</h5>
+			<%= f.text_area :body %>
+			<div class="submit"><%= f.submit 'Create Book' %></div>
 
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.shtml.erb</p>
+			<% end %>
+		</div>
+		<div class="col-xs-9">
+			<h2>Users</h2>
+			<table class="table">
+				<tr>
+					<th class="th-image"></th>
+					<th class="th-name">Name</th>
+					<th class=""></th>
+				</tr>
+				<% @users.each do |user| %>
+				<tr>
+					<td><%= image_tag('no_image.jpg', :size =>'50x50', class: "profile-thumb") %> </td>
+					<td><%= user.name %></td>
+					<td><%= link_to user_path(user) do %>Show<% end %></td>
+				</tr>
+				<% end %>
 
+			</table>
+		</div>
+	</div>
+</div>
 <%= render 'home/footer' %>
