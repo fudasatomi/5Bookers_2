@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-xs-3">
 			<h2>User info</h2>
-			<%= image_tag('no_image.jpg', :size =>'100x100', class: "profile-thumb") %>
+			<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "profile-thumb", fallback: "no_image.jpg"%>
 			<table class="table">
 				<tr>
 					<th class="user-th">name</th>
@@ -31,7 +31,9 @@
 			<h2>Book detail</h2>
 			<table class="table">
 				<tr>
-					<td><%= image_tag('no_image.jpg', :size =>'100x100', class: "profile-thumb") %> <p>user</p></td>
+					<td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %>
+						<p><%= link_to user_path(@user) do %><%= @user.name %><% end %></p>
+					</td>
 					<td><%= @bookdetail.title %></td>
 					<td><%= @bookdetail.body %></td>
 					<td><%= link_to 'Edit', edit_book_path(@bookdetail) %></td>

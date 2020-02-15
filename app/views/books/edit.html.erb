@@ -1,6 +1,20 @@
 <%= render 'home/header' %>
 
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div class="container contents">
+<h2>Editing Book</h2>
 
+<%= form_for(@book) do |f| %>
+<h5>Title</h5>
+<%= f.text_field :title %>
+
+<h5>Opinion</h5>
+<%= f.text_area :body %>
+
+<div class="submit"><%= f.submit 'Update Book' %></div>
+
+<% end %>
+
+<h5><%= link_to 'Show', book_path(@book) %> | <%= link_to 'Back', books_path %></h5>
+
+</div>
 <%= render 'home/footer' %>
