@@ -1,4 +1,13 @@
 class BooksController < ApplicationController
+  before_action :access_user,:only=>[:edit ,:update, :destroy]
+    def access_user
+      @book = Book.find(params[:id])
+      if @book.user_id != current_user.id
+       redirect_to books_path
+      end
+    end
+
+
   def index
     @user = current_user
     @books = Book.all

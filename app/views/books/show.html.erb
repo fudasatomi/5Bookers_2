@@ -14,10 +14,10 @@
 					</td>
 					<td><%= @bookdetail.title %></td>
 					<td><%= @bookdetail.body %></td>
-				<% if @bookdetail.user == current_user %>
-					<td><%= link_to 'Edit', edit_book_path(@bookdetail) %></td>
-					<td><%= link_to 'Destroy', book_path(@bookdetail), method: :delete,data: {confirm: "本当に消しますか？"} %></td>
-				<% end %>
+					<% if @bookdetail.user == current_user %>
+						<td><%= link_to 'Edit', edit_book_path(@bookdetail) %></td>
+						<td><%= link_to 'Destroy', book_path(@bookdetail), method: :delete,data: {confirm: "本当に消しますか？"} %></td>
+					<% end %>
 
 				</tbody>
 			</table>

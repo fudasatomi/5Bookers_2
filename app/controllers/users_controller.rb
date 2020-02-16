@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  before_action :access_user,:only=>[:edit ,:update]
+    def access_user
+      @user = User.find(params[:id])
+      if @user.id != current_user.id
+        redirect_to user_path(current_user)
+      end
+    end
+
   def index
     @user = current_user
     @users = User.all
@@ -23,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def update
