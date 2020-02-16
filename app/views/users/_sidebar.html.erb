@@ -11,14 +11,24 @@
 	</tr>
 </table>
 <div class="row">
-	<%= link_to edit_user_path(current_user) do %><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button><% end %>
+	<% if user == current_user %>
+		<%= link_to edit_user_path(current_user) do %><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button><% end %>
+	<% else %>
+		<%= link_to user_path(current_user) do %><button type="button" class="btn btn-default btn-block"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button><% end %>
+	<% end %>
+
 </div>
 <h2>New book</h2>
 <%= form_for(book) do |f| %>
-<h5>Title</h5>
-<%= f.text_field :title %>
-<h5>Opinion</h5>
-<%= f.text_area :body %>
-<div class="submit"><%= f.submit 'Create Book' %></div>
+<div class="row">
+<label>Title</label>
+<%= f.text_field :title , :class => "col-xs-12" %>
+</div>
+<div class="row">
+<label>Opinion</label>
+<%= f.text_area :body, :class => "col-xs-12" %>
+</div>
+<div class="row">
+<%= f.submit 'Create Book',  :class => "btn btn-primary col-xs-12"%></div>
 
 <% end %>

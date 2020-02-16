@@ -1,24 +1,25 @@
 <div><%= render 'header' %></div>
-<div class="container contents">
   <%= render 'layouts/devisesuccusess' %>
-  <div class="row">
+  <div class="container contents">
     <div class="col-md-6 col-md-offset-3">
-      <h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h1>
+      <div class="row">
+      <h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers !!</strong></h1>
 
-      <p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers,</p>
+      <p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers</strong>,</p>
 
       <p>you can share and exchange your opinions , inpressions , and emotions</p>
 
       <p>about various books!</p>
     </div>
-  </div>
 
     <div class="row">
-    <%= link_to 'Log in', new_user_session_path, class:"btn btn-info col-xs-10 col-xs-offset-1"%>
+    <%= link_to 'Log in', new_user_session_path, :class => "btn btn-info col-xs-10 col-xs-offset-1"%>
     </div>
     <div class="row">
-      <%= link_to 'sign up', new_user_registration_path, class:"btn btn-success col-xs-10 col-xs-offset-1" %>
+      <%= link_to 'sign up', new_user_registration_path, :class => "btn btn-success col-xs-10 col-xs-offset-1" %>
     </div>
+  </div>
+</div>
 </div>
 
     <%= render 'footer' %>
