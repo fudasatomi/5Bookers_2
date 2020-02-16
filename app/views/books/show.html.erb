@@ -1,10 +1,6 @@
 <%= render 'home/header' %>
 <div class="container contents">
-<!-- サクセスメッセージ -->
-	<% if flash[:notice] %>
-	<span class="message"><%= notice %></span>
-	<% end %>
-<!-- サクセスメッセージ -->
+    <%= render 'books/success' %>
 	<div class="row">
 		<div class="col-xs-3">
 			<%=  render'users/sidebar', user: @user , book:@book %>
@@ -19,7 +15,7 @@
 					<td><%= @bookdetail.title %></td>
 					<td><%= @bookdetail.body %></td>
 					<td><%= link_to 'Edit', edit_book_path(@bookdetail) %></td>
-					<td><%= link_to 'Destroy', book_path(@bookdetail), method: :delete,data: {confirm: "Are you sure?"} %></td>
+					<td><%= link_to 'Destroy', book_path(@bookdetail), method: :delete,data: {confirm: "本当に消しますか？"} %></td>
 
 				</tr>
 			</table>
