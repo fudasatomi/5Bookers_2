@@ -1,5 +1,10 @@
 <%= render 'home/header' %>
 <div class="container contents">
+<!-- サクセスメッセージ -->
+	<% if flash[:notice] %>
+	<span class="message"><%= notice %></span>
+	<% end %>
+<!-- サクセスメッセージ -->
 	<div class="row">
 		<div class="col-xs-3">
 			<%=  render'users/sidebar', user: @user , book:@book %>

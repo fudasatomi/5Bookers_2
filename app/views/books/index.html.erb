@@ -1,6 +1,22 @@
 <%= render 'home/header' %>
-
 <div class="container contents">
+<!-- サクセスメッセージ -->
+	<% if flash[:notice] %>
+	<span class="message"><%= notice %></span>
+	<% end %>
+<!-- サクセスメッセージ -->
+<!-- bookcreateエラーメッセージ -->
+<% if @book.errors.any? %>
+<div id="error_explanation">
+	<h4><%= @book.errors.count %>error prohibited this obj from being saved:</h4>
+	　<ul>
+		<% @book.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<!-- エラーメッセージ -->
 	<div class="row">
 		<div class="col-xs-3">
 			<%=  render'users/sidebar', user: @user , book:@book %>
