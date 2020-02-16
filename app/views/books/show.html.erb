@@ -10,13 +10,13 @@
 			<table class="table">
 				<tbody>
 					<td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %>
-						<p><%= link_to user_path(@user) do %><%= @user.name %><% end %></p>
+						<div><%= link_to user_path(@user) do %><%= @user.name %><% end %></div>
 					</td>
-					<td><%= @bookdetail.title %></td>
+					<td><%= link_to book_path(@bookdetail) do %><%= @bookdetail.title %><% end %></td>
 					<td><%= @bookdetail.body %></td>
 					<% if @bookdetail.user == current_user %>
-						<td><%= link_to 'Edit', edit_book_path(@bookdetail) %></td>
-						<td><%= link_to 'Destroy', book_path(@bookdetail), method: :delete,data: {confirm: "本当に消しますか？"} %></td>
+						<td><%= link_to 'Edit', edit_book_path(@bookdetail), :class => "btn btn-success" %></td>
+						<td><%= link_to 'Destroy', book_path(@bookdetail),:class => "btn btn-danger", method: :delete,data: {confirm: "本当に消しますか？"} %></td>
 					<% end %>
 
 				</tbody>
