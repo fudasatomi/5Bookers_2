@@ -15,28 +15,61 @@
  */
     @import "bootstrap-sprockets";
     @import "bootstrap";
-
+a:visited{
+	color: #666;
+}
+a:hover{
+	color: #337ab7;
+	background-color: black;
+}
+.error_explanation{
+	color: red;
+}
+#error_explanation{
+	color: red;
+}
+.message{
+	color: green;
+}
 
 .title{
 	color: white;
 	font-size: 20px;
 }
-
-.nemu{
+.memu{
 	font-size: 13px;
 	text-align: justify;
-	line-height: 18px
+	line-height: 18px;
+	font-family: 'Glyphicons Halflings';
 }
+p{
+	font-family: verdana, arial, helvetica, sans-serif;
+
+}
+
 .contents{
 	margin-top: 51px;
 }
-
-.user-th{
-	width: 100px;
+.form{
+	margin-bottom: 10px;
 }
+.btn-danger{
+	color: #666;
+}
+.btn-top{
+	color: #666;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
 td{
 	font-size: 13px;
 }
-.form{
-	margin-bottom: 10px;
+.user-image{
+	width: 30%;
+}
+.user-name{
+	width: 50%;
+}
+.user-link{
+	width: 20%;
 }
