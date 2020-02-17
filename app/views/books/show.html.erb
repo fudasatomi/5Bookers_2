@@ -1,0 +1,27 @@
+<%= render 'home/header' %>
+<div class="container contents">
+    <%= render 'books/success' %>
+	<div class="row">
+		<div class="col-xs-3">
+			<%=  render'users/sidebar', user: @user , book:@book %>
+		</div>
+		<div class="col-xs-9">
+			<h2>Book detail</h2>
+			<table class="table">
+				<tbody>
+					<td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %>
+						<div><%= link_to user_path(@user) do %><%= @user.name %><% end %></div>
+					</td>
+					<td><%= link_to book_path(@bookdetail) do %><%= @bookdetail.title %><% end %></td>
+					<td><%= @bookdetail.body %></td>
+					<% if @bookdetail.user == current_user %>
+						<td><%= link_to 'Edit', edit_book_path(@bookdetail), :class => "btn-sm btn-success" %></td>
+						<td><%= link_to 'Destroy', book_path(@bookdetail),:class => "btn-sm btn-danger", method: :delete,data: {confirm: "本当に消しますか？"} %></td>
+					<% end %>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<%= render 'home/footer' %>

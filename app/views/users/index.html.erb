@@ -1,0 +1,27 @@
+<%= render 'home/header' %>
+<div class="container contents">
+	<div class="row">
+		<div class="col-xs-3">
+			<%=  render'users/sidebar', user: @user , book:@book %>
+		</div>
+		<div class="col-xs-9">
+			<h2>Users</h2>
+			<table class="table">
+				<thead>
+					<th class="user-image">image</th>
+					<th class="user-name">name</th>
+					<th class="user-link"></th>
+				</thead>
+				<% @users.each do |user| %>
+				<tr>
+					<td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %></td>
+					<td><%= user.name %></td>
+					<td><%= link_to user_path(user) do %>Show<% end %></td>
+				</tr>
+				<% end %>
+
+			</table>
+		</div>
+	</div>
+</div>
+<%= render 'home/footer' %>

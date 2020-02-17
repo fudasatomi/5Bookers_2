@@ -1,0 +1,25 @@
+<div><%= render 'header' %></div>
+  <div class="container contents">
+    <p><%= render 'books/success' %></p>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+      <h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers !!</strong></h1>
+
+      <p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers</strong>,</p>
+
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+
+      <p>about various books!</p>
+    </div>
+
+    <div class="row">
+    <%= link_to 'Log in', new_user_session_path, :class => "btn btn-info col-xs-10 col-xs-offset-1 btn-top"%>
+    </div>
+    <div class="row">
+      <%= link_to 'sign up', new_user_registration_path, :class => "btn btn-success col-xs-10 col-xs-offset-1 btn-top" %>
+    </div>
+  </div>
+</div>
+</div>
+
+    <%= render 'footer' %>
